@@ -1,0 +1,24 @@
+{
+  "kind": "collectionType",
+  "collectionName": "projects",
+  "info": {
+    "singularName": "project",
+    "pluralName": "projects",
+    "displayName": "Project"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "project_name": {
+      "type": "string"
+    },
+    "subprojects": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::subproject.subproject",
+      "mappedBy": "project"
+    }
+  }
+}

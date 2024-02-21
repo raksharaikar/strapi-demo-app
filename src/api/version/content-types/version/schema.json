@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "versions",
+  "info": {
+    "singularName": "version",
+    "pluralName": "versions",
+    "displayName": "version",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "version_name": {
+      "type": "string"
+    },
+    "subproject": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::subproject.subproject",
+      "inversedBy": "versions"
+    },
+    "positions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::position.position",
+      "mappedBy": "version"
+    }
+  }
+}

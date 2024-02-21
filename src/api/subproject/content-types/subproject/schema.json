@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subprojects",
+  "info": {
+    "singularName": "subproject",
+    "pluralName": "subprojects",
+    "displayName": "Subproject"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "subproject_name": {
+      "type": "string"
+    },
+    "project": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::project.project",
+      "inversedBy": "subprojects"
+    },
+    "versions": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::version.version",
+      "mappedBy": "subproject"
+    }
+  }
+}
